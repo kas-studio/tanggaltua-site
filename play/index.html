@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#181529" />
+    <title>Coba Demo Interaktif – Tanggal Tua | KAS Studio</title>
+    <meta
+      name="description"
+      content="Coba langsung 3 mini-demo interaktif (&lt;30 KB) dan video gameplay 9:16 Full HD untuk Tanggal Tua karya KAS Studio."
+    />
+    <link rel="canonical" href="https://tanggaltua.id/play/" />
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tanggaltua.id/play/" />
+    <meta property="og:title" content="Coba Demo Interaktif – Tanggal Tua | KAS Studio" />
+    <meta
+      property="og:description"
+      content="Mainkan langsung 3 cuplikan interaktif Tanggal Tua: Magic Com 450VA, Kulkas Kos 5x4, dan Ibu Kos &amp; Kurir Ojol!"
+    />
+    <meta property="og:image" content="https://tanggaltua.id/og-image.png" />
+    <style>
+      *, *::before, *::after { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font: 15px/1.55 'Avenir Next', 'SF Pro Rounded', 'Nunito', system-ui, sans-serif;
+        background: radial-gradient(circle at 20% 10%, #2b234a 0%, #161327 65%, #0f0d1b 100%);
+        color: #f8fafc;
+        min-height: 100vh;
+      }
+      header {
+        background: rgba(24, 21, 41, 0.92);
+        backdrop-filter: blur(10px);
+        border-bottom: 2px solid #332c52;
+        padding: 12px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 20;
+      }
+      .bar {
+        max-width: 1140px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 15px;
+      }
+      .brand img {
+        width: 36px;
+        height: 36px;
+        border-radius: 9px;
+        border: 2px solid #ffd166;
+      }
+      .top-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+      .pill-btn {
+        background: #ffd166;
+        color: #181625;
+        border: 2px solid #120f1e;
+        border-radius: 999px;
+        padding: 7px 14px;
+        font-size: 12.5px;
+        font-weight: 900;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .pill-btn.ghost {
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.25);
+      }
+      .pill-btn.ghost.active {
+        background: #2ec4b6;
+        color: #12101e;
+        border-color: #12101e;
+      }
+      main {
+        max-width: 1140px;
+        margin: 26px auto 64px;
+        padding: 0 18px;
+        display: grid;
+        grid-template-columns: 1.08fr 0.92fr;
+        gap: 28px;
+        align-items: start;
+      }
+      @media (max-width: 880px) {
+        main { grid-template-columns: 1fr; }
+        .phone-col { order: -1; }
+      }
+      .kicker {
+        display: inline-block;
+        background: rgba(46, 196, 182, 0.18);
+        color: #5eead4;
+        border: 1.5px solid #2ec4b6;
+        font-size: 11px;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        padding: 4px 11px;
+        border-radius: 999px;
+        margin-bottom: 10px;
+      }
+      h1 {
+        font-size: clamp(24px, 3.4vw, 34px);
+        font-weight: 900;
+        line-height: 1.15;
+        margin: 0 0 10px;
+      }
+      .lead {
+        color: #cbd5e1;
+        margin: 0 0 16px;
+        font-size: 14.8px;
+      }
+      .mode-switcher {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        background: #171327;
+        padding: 6px;
+        border-radius: 16px;
+        border: 2px solid #352d57;
+        margin-bottom: 16px;
+      }
+      .mode-btn {
+        background: transparent;
+        color: #cbd5e1;
+        border: 0;
+        border-radius: 11px;
+        padding: 10px 12px;
+        font-size: 13px;
+        font-weight: 900;
+        cursor: pointer;
+        transition: background 0.15s ease, color 0.15s ease;
+      }
+      .mode-btn.active {
+        background: #f27d42;
+        color: #fff;
+        box-shadow: 0 3px 0 #120f1e;
+      }
+      .concept-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .concept-card {
+        text-align: left;
+        background: #211c37;
+        color: #fff;
+        border: 2.5px solid #3b335e;
+        border-radius: 18px;
+        padding: 14px 16px;
+        cursor: pointer;
+        transition: transform 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+      }
+      .concept-card:hover { transform: translateY(-2px); border-color: #ffd166; }
+      .concept-card.active {
+        background: #2b2347;
+        border-color: #ffd166;
+        box-shadow: 0 5px 0 #110e1d;
+      }
+      .concept-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 4px;
+      }
+      .concept-tag {
+        font-size: 11px;
+        font-weight: 900;
+        padding: 2px 9px;
+        border-radius: 999px;
+        background: #f27d42;
+        color: #fff;
+      }
+      .concept-size {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 11.5px;
+        color: #a7f3d0;
+        font-weight: 800;
+      }
+      .concept-card strong {
+        display: block;
+        font-size: 16px;
+        font-weight: 900;
+        margin-bottom: 3px;
+      }
+      .concept-card p {
+        margin: 0;
+        font-size: 13.3px;
+        color: #cbd5e1;
+      }
+      .player-cta-box {
+        margin-top: 18px;
+        background: linear-gradient(150deg, rgba(46, 196, 182, 0.14) 0%, rgba(242, 125, 66, 0.14) 100%);
+        border: 2px solid #2ec4b6;
+        border-radius: 18px;
+        padding: 16px 18px;
+      }
+      .player-cta-box h2 {
+        font-size: 14.5px;
+        font-weight: 900;
+        color: #ffd166;
+        margin: 0 0 6px;
+      }
+      .player-cta-box p {
+        margin: 0 0 12px;
+        font-size: 13.2px;
+        color: #e2e8f0;
+      }
+      .beta-cta-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+      @media (max-width: 520px) {
+        .beta-cta-grid { grid-template-columns: 1fr; }
+      }
+      .beta-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+        padding: 11px 14px;
+        border-radius: 13px;
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 13.5px;
+        border: 2px solid #120f1e;
+        box-shadow: 0 3px 0 #120f1e;
+        transition: transform 0.12s ease;
+      }
+      .beta-btn:hover { transform: translateY(-1px); }
+      .beta-btn.ios { background: #ffd166; color: #181625; }
+      .beta-btn.android { background: #2ec4b6; color: #10201f; }
+      .beta-btn small { font-size: 11px; font-weight: 700; opacity: 0.85; }
+      .export-box {
+        margin-top: 18px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 2px solid rgba(255, 255, 255, 0.14);
+        border-radius: 18px;
+        padding: 15px 17px;
+      }
+      .export-box h2 {
+        font-size: 13.5px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: #ffd166;
+        margin: 0 0 6px;
+      }
+      .export-box p {
+        margin: 0 0 12px;
+        font-size: 13px;
+        color: #cbd5e1;
+      }
+      .dl-row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+      .dl-chip {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 6px;
+        background: #181429;
+        color: #f8fafc;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 800;
+        padding: 9px 12px;
+        border-radius: 11px;
+        border: 1.5px solid #473e6e;
+      }
+      .dl-chip.video-dl {
+        grid-column: 1 / -1;
+        background: #271d3d;
+        border-color: #f27d42;
+      }
+      .dl-chip:hover { border-color: #2ec4b6; color: #5eead4; }
+      .dl-chip small { color: #cbd5e1; font-family: ui-monospace, monospace; }
+
+      .phone-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .phone-mode-badge {
+        margin-bottom: 10px;
+        font-size: 12px;
+        font-weight: 900;
+        padding: 5px 14px;
+        border-radius: 999px;
+        background: #211c37;
+        border: 1.5px solid #ffd166;
+        color: #ffd166;
+      }
+      .phone-shell {
+        width: 376px;
+        max-width: 100%;
+        aspect-ratio: 376 / 676;
+        background: #1b172e;
+        border: 5px solid #ffd166;
+        border-radius: 40px;
+        padding: 12px;
+        box-shadow: 0 22px 50px rgba(0, 0, 0, 0.55);
+        display: flex;
+        flex-direction: column;
+      }
+      .phone-frame-wrap {
+        flex: 1;
+        border-radius: 28px;
+        overflow: hidden;
+        background: #141122;
+        position: relative;
+      }
+      iframe, video {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        display: block;
+        object-fit: cover;
+        background: #141122;
+      }
+      .hidden { display: none !important; }
+      .phone-toolbar {
+        margin-top: 12px;
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    </style>
+    <script defer src="https://admin.kasstudio.id/beacon.js" data-brand="tanggal-tua"></script>
+  </head>
+  <body>
+    <header>
+      <div class="bar">
+        <a class="brand" id="brand-home-link" href="/">
+          <img src="/assets/app-icon.png" alt="Tanggal Tua" width="36" height="36" />
+          <span id="brand-label">TANGGAL TUA • Mini-Demo Interaktif</span>
+        </a>
+        <div class="top-actions">
+          <button type="button" class="pill-btn ghost active" id="lang-id">🇮🇩 ID</button>
+          <button type="button" class="pill-btn ghost" id="lang-en">🇬🇧 EN</button>
+          <a class="pill-btn" id="header-cta" href="/#playtest">Daftar Akses Full Game →</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <span class="kicker" id="page-kicker">CUPLIKAN GAMEPLAY LANGSUNG DI BROWSER • TANPA INSTALL</span>
+        <h1 id="page-h1">Coba 3 Cuplikan Gameplay Tanggal Tua</h1>
+        <p class="lead" id="page-lead">
+          Pilih salah satu skenario kosan di bawah untuk langsung <strong>bermain di layar HP samping</strong> atau tonton
+          <strong>video cuplikan gameplay</strong> lengkap dengan efek suara kosan!
+        </p>
+
+        <div class="mode-switcher" id="mode-tablist" role="tablist" aria-label="Pilih format demo">
+          <button type="button" class="mode-btn active" id="mode-playable">
+            🎮 Mainkan Langsung (Interaktif)
+          </button>
+          <button type="button" class="mode-btn" id="mode-video">
+            🎬 Tonton Video Gameplay
+          </button>
+        </div>
+
+        <div class="concept-list" id="concept-list">
+          <button type="button" class="concept-card active" data-concept="a" data-slug="450va-cooker" data-vid="450va">
+            <div class="concept-top">
+              <span class="concept-tag" id="tag-a">SKENARIO A • DAPUR 450VA</span>
+              <span class="concept-size" id="size-a">15 Detik • Masak Kos</span>
+            </div>
+            <strong id="title-a">1. Awas Listrik 450VA Jeklek! (Magic Com Overload)</strong>
+            <p id="desc-a">Masukkan Kornet ke panci Mie + Telur, hadapi lonjakan merah 485/450VA &amp; JEKLEK, lalu matikan Kipas Kamar (-65VA) buat masak Internet Warkop!</p>
+          </button>
+
+          <button type="button" class="concept-card" data-concept="b" data-slug="kulkas-5x4" data-vid="kulkas">
+            <div class="concept-top">
+              <span class="concept-tag" id="tag-b" style="background:#2ec4b6;color:#12101e">SKENARIO B • PUZZLE KULKAS</span>
+              <span class="concept-size" id="size-b">15 Detik • Susun Ruang</span>
+            </div>
+            <strong id="title-b">2. Kulkas Kos 5×4 vs Tupperware Mas Budi</strong>
+            <p id="desc-b">Ketabrak kotak makan ungu Mas Budi dulu, lalu putar (↻ PUTAR) Bayam &amp; selipkan Roti Tawar + Telur sebelum layu semalaman!</p>
+          </button>
+
+          <button type="button" class="concept-card" data-concept="c" data-slug="ibukos-ojol" data-vid="ojol">
+            <div class="concept-top">
+              <span class="concept-tag" id="tag-c" style="background:#ffd166;color:#181625">SKENARIO C • MALAM &amp; OJOL</span>
+              <span class="concept-size" id="size-c">16 Detik • Drama + Aksi</span>
+            </div>
+            <strong id="title-c">3. Jam 23:45: Ibu Kos Gedor Pintu → Kurir Ojol!</strong>
+            <p id="desc-c">Tolak godaan Pinjol saat Ibu Kos nagih Rp10.000, matikan lampu kamar, lalu kejar 3 orderan motor Rp15.000 di Gang Kancil!</p>
+          </button>
+        </div>
+
+        <div class="player-cta-box" id="player-cta-box">
+          <h2 id="beta-heading">Siap Bertahan Penuh 11 Hari Menuju Gajian?</h2>
+          <p id="beta-desc">Mainkan 36 resep Magic Com, 4 karakter anak kos, 8 Kasta kesulitan, dan Tantangan Harian (#TTH) gratis 100% offline tanpa iklan paksa di iOS &amp; Android.</p>
+          <div class="beta-cta-grid">
+            <a class="beta-btn ios" id="cta-ios-beta" href="/#testflight">
+              <span id="cta-ios-main">📱 Daftar Rilis iOS (iPhone &amp; iPad)</span>
+              <small id="cta-ios-sub">Undangan TestFlight / App Store dari KAS Studio</small>
+            </a>
+            <a class="beta-btn android" id="cta-android-beta" href="/#beta">
+              <span id="cta-android-main">🤖 Gabung Closed Beta Android</span>
+              <small id="cta-android-sub">Akses Google Play Closed Testing resmi</small>
+            </a>
+          </div>
+        </div>
+
+        <div class="export-box hidden" id="studio-export-box">
+          <h2 id="export-heading">Studio Creative Packages (Meta / TikTok / Google / MRAID)</h2>
+          <p id="export-caption">Unduh paket untuk <strong>Konsep A (450VA Magic Com)</strong>:</p>
+          <div class="dl-row">
+            <a class="dl-chip video-dl" id="dl-video" href="/play/downloads/tanggaltua-video-ad-a-450va.mp4" download>
+              <span id="dl-video-lbl">🎬 Video Iklan Non-Playable (1080×1920 Full HD + Audio)</span>
+              <small>.mp4 Reels/TikTok</small>
+            </a>
+            <a class="dl-chip" id="dl-meta" href="/play/downloads/tanggaltua-playable-a-450va-cooker-meta.html" download>
+              <span>Meta Playable (IG/FB)</span>
+              <small>29 KB .html</small>
+            </a>
+            <a class="dl-chip" id="dl-tiktok" href="/play/downloads/tanggaltua-playable-a-450va-cooker-tiktok.zip" download>
+              <span>TikTok / Pangle Playable</span>
+              <small>10 KB .zip</small>
+            </a>
+            <a class="dl-chip" id="dl-google" href="/play/downloads/tanggaltua-playable-a-450va-cooker-google.zip" download>
+              <span>Google App Playable</span>
+              <small>10 KB .zip</small>
+            </a>
+            <a class="dl-chip" id="dl-mraid" href="/play/downloads/tanggaltua-playable-a-450va-cooker-mraid.html" download>
+              <span>Unity / AppLovin</span>
+              <small>MRAID .html</small>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div class="phone-col">
+        <span class="phone-mode-badge" id="phone-badge">🎮 INTERAKTIF — KLIK LANGSUNG DI LAYAR BAWAH</span>
+        <div class="phone-shell">
+          <div class="phone-frame-wrap">
+            <iframe id="playable-frame" src="/play/a/" title="Tanggal Tua Interactive Playable Preview"></iframe>
+            <video id="video-player" class="hidden" playsinline controls loop preload="metadata" src="/play/downloads/tanggaltua-video-ad-a-450va.mp4"></video>
+          </div>
+        </div>
+        <div class="phone-toolbar">
+          <button type="button" class="pill-btn ghost" id="btn-reload">↻ Ulang dari Awal</button>
+          <a class="pill-btn ghost" id="btn-fullscreen" href="/play/a/" target="_blank" rel="noopener">⤢ Buka Penuh</a>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const isStudioMode = params.get('studio') === '1';
+
+      let activeConcept = 'a';
+      let activeSlug = '450va-cooker';
+      let activeVid = '450va';
+      let activeLang = (params.get('lang') || '').toLowerCase().startsWith('en') ? 'en' : 'id';
+      let activeMode = params.get('mode') === 'video' ? 'video' : 'playable';
+
+      if (isStudioMode) {
+        document.getElementById('studio-export-box').classList.remove('hidden');
+      }
+
+      const COPY = {
+        id: {
+          docTitle: 'Coba Demo Interaktif – Tanggal Tua | KAS Studio',
+          brandLabel: 'TANGGAL TUA • Mini-Demo Interaktif',
+          homeHref: '/',
+          headerCta: 'Daftar Akses Full Game →',
+          headerCtaHref: '/#playtest',
+          kicker: 'CUPLIKAN GAMEPLAY LANGSUNG DI BROWSER • TANPA INSTALL',
+          h1: 'Coba 3 Cuplikan Gameplay Tanggal Tua',
+          lead: 'Pilih salah satu skenario kosan di bawah untuk langsung <strong>bermain di layar HP samping</strong> atau tonton <strong>video cuplikan gameplay</strong> lengkap dengan efek suara kosan!',
+          tablistLabel: 'Pilih format demo',
+          modePlayable: '🎮 Mainkan Langsung (Interaktif)',
+          modeVideo: '🎬 Tonton Video Gameplay',
+          tagA: 'SKENARIO A • DAPUR 450VA',
+          sizeA: '15 Detik • Masak Kos',
+          titleA: '1. Awas Listrik 450VA Jeklek! (Magic Com Overload)',
+          descA: 'Masukkan Kornet ke panci Mie + Telur, hadapi lonjakan merah 485/450VA & JEKLEK, lalu matikan Kipas Kamar (-65VA) buat masak Internet Warkop!',
+          tagB: 'SKENARIO B • PUZZLE KULKAS',
+          sizeB: '15 Detik • Susun Ruang',
+          titleB: '2. Kulkas Kos 5×4 vs Tupperware Mas Budi',
+          descB: 'Ketabrak kotak makan ungu Mas Budi dulu, lalu putar (↻ PUTAR) Bayam & selipkan Roti Tawar + Telur sebelum layu semalaman!',
+          tagC: 'SKENARIO C • MALAM & OJOL',
+          sizeC: '16 Detik • Drama + Aksi',
+          titleC: '3. Jam 23:45: Ibu Kos Gedor Pintu → Kurir Ojol!',
+          descC: 'Tolak godaan Pinjol saat Ibu Kos nagih Rp10.000, matikan lampu kamar, lalu kejar 3 orderan motor Rp15.000 di Gang Kancil!',
+          betaHeading: 'Siap Bertahan Penuh 11 Hari Menuju Gajian?',
+          betaDesc: 'Mainkan 36 resep Magic Com, 4 karakter anak kos, 8 Kasta kesulitan, dan Tantangan Harian (#TTH) gratis 100% offline tanpa iklan paksa di iOS & Android.',
+          iosMain: '📱 Daftar Rilis iOS (iPhone & iPad)',
+          iosSub: 'Undangan TestFlight / App Store dari KAS Studio',
+          iosHref: '/#testflight',
+          androidMain: '🤖 Gabung Closed Beta Android',
+          androidSub: 'Akses Google Play Closed Testing resmi',
+          androidHref: '/#beta',
+          exportHeading: 'Unduh Paket Siap Upload (Meta / TikTok / Google / Reels)',
+          exportPrefix: 'Unduh paket untuk',
+          dlVideoLbl: '🎬 Video Iklan Non-Playable (1080×1920 Full HD + Audio)',
+          badgePlayable: '🎮 INTERAKTIF — KLIK LANGSUNG DI LAYAR BAWAH',
+          badgeVideo: '🎬 VIDEO DEMO (NON-PLAYABLE) — NYALAKAN SUARA 🔊',
+          reload: '↻ Ulang dari Awal',
+          fullscreen: '⤢ Buka Penuh',
+          names: {
+            a: 'Konsep A (450VA Magic Com)',
+            b: 'Konsep B (Kulkas 5×4 vs Budi)',
+            c: 'Konsep C (Ibu Kos & Kurir Ojol)',
+          },
+        },
+        en: {
+          docTitle: 'Play Interactive Mini-Demos – Tanggal Tua | KAS Studio',
+          brandLabel: 'TANGGAL TUA • Interactive Mini-Demos',
+          homeHref: '/en',
+          headerCta: 'Get Full Game Beta Access →',
+          headerCtaHref: '/en#unduh',
+          kicker: 'INSTANT BROWSER MINI-DEMOS • ZERO INSTALL',
+          h1: 'Try 3 Bite-Sized Tanggal Tua Scenarios',
+          lead: 'Pick any boarding-house scenario below to <strong>play right inside the phone frame</strong> or watch the <strong>gameplay preview video</strong> with kosan sound effects!',
+          tablistLabel: 'Choose preview mode',
+          modePlayable: '🎮 Play Interactive Demo',
+          modeVideo: '🎬 Watch Gameplay Video',
+          tagA: 'SCENARIO A • 450VA RICE COOKER',
+          sizeA: '15s • Wattage Puzzle',
+          titleA: '1. Watch the 450VA Breaker! (Rice Cooker Overload)',
+          descA: 'Drop Corned Beef into Noodles + Egg, trip the red 485/450VA breaker, then flip OFF the Room Fan (-65VA) to cook Internet Warkop!',
+          tagB: 'SCENARIO B • SHARED FRIDGE',
+          sizeB: '15s • Spatial Fit',
+          titleB: '2. 5×4 Shared Fridge vs Budi’s Tupperware',
+          descB: 'Work around your roommates’ purple lunchboxes — tap ↻ ROTATE on Spinach and slot Bread + Eggs before they wilt overnight!',
+          tagC: 'SCENARIO C • NIGHT DRAMA & OJOL',
+          sizeC: '16s • Stealth + Action',
+          titleC: '3. 23:45 Landlady Knock → Scooter Hustle!',
+          descC: 'Dodge predatory loan spam when Ibu Kos knocks for Rp10,000 dues, kill your room lights, and grab 3 scooter orders for Rp15,000!',
+          betaHeading: 'Ready to Survive All 11 Days Until Payday?',
+          betaDesc: 'Unlock 36 rice-cooker recipes, 4 Jakarta kosan residents, 8 Kasta tiers, and the Daily #TTH Challenge — 100% free, offline-friendly, and zero forced ads on iOS & Android.',
+          iosMain: '📱 Join iOS Waitlist (iPhone & iPad)',
+          iosSub: 'Official TestFlight / App Store notify list by KAS Studio',
+          iosHref: '/en#testflight',
+          androidMain: '🤖 Join Android Closed Beta',
+          androidSub: 'Official Google Play Closed Testing access',
+          androidHref: '/en#beta',
+          exportHeading: 'Studio Ad Creative Exports (Meta / TikTok / Google / MRAID)',
+          exportPrefix: 'Download bundle for',
+          dlVideoLbl: '🎬 Non-Playable Gameplay Video (1080×1920 Full HD + Audio)',
+          badgePlayable: '🎮 INTERACTIVE — TAP DIRECTLY INSIDE THE PHONE SCREEN',
+          badgeVideo: '🎬 GAMEPLAY VIDEO — TURN SOUND ON 🔊',
+          reload: '↻ Restart Demo',
+          fullscreen: '⤢ Open Fullscreen',
+          names: {
+            a: 'Scenario A (450VA Rice Cooker)',
+            b: 'Scenario B (5×4 Shared Fridge)',
+            c: 'Scenario C (Ibu Kos & Ojol Courier)',
+          },
+        },
+      };
+
+      const frame = document.getElementById('playable-frame');
+      const videoEl = document.getElementById('video-player');
+      const fullBtn = document.getElementById('btn-fullscreen');
+      const expCap = document.getElementById('export-caption');
+      const phoneBadge = document.getElementById('phone-badge');
+
+      function applyChromeLanguage() {
+        const t = COPY[activeLang];
+        document.documentElement.lang = activeLang;
+        document.title = t.docTitle;
+        document.getElementById('brand-label').textContent = t.brandLabel;
+        document.getElementById('brand-home-link').href = t.homeHref;
+        const hCta = document.getElementById('header-cta');
+        hCta.textContent = t.headerCta;
+        hCta.href = t.headerCtaHref;
+
+        document.getElementById('page-kicker').textContent = t.kicker;
+        document.getElementById('page-h1').textContent = t.h1;
+        document.getElementById('page-lead').innerHTML = t.lead;
+        document.getElementById('mode-tablist').setAttribute('aria-label', t.tablistLabel);
+        document.getElementById('mode-playable').textContent = t.modePlayable;
+        document.getElementById('mode-video').textContent = t.modeVideo;
+
+        document.getElementById('tag-a').textContent = t.tagA;
+        document.getElementById('size-a').textContent = t.sizeA;
+        document.getElementById('title-a').textContent = t.titleA;
+        document.getElementById('desc-a').textContent = t.descA;
+
+        document.getElementById('tag-b').textContent = t.tagB;
+        document.getElementById('size-b').textContent = t.sizeB;
+        document.getElementById('title-b').textContent = t.titleB;
+        document.getElementById('desc-b').textContent = t.descB;
+
+        document.getElementById('tag-c').textContent = t.tagC;
+        document.getElementById('size-c').textContent = t.sizeC;
+        document.getElementById('title-c').textContent = t.titleC;
+        document.getElementById('desc-c').textContent = t.descC;
+
+        document.getElementById('beta-heading').textContent = t.betaHeading;
+        document.getElementById('beta-desc').textContent = t.betaDesc;
+        document.getElementById('cta-ios-main').textContent = t.iosMain;
+        document.getElementById('cta-ios-sub').textContent = t.iosSub;
+        document.getElementById('cta-ios-beta').href = t.iosHref;
+        document.getElementById('cta-android-main').textContent = t.androidMain;
+        document.getElementById('cta-android-sub').textContent = t.androidSub;
+        document.getElementById('cta-android-beta').href = t.androidHref;
+
+        document.getElementById('export-heading').textContent = t.exportHeading;
+        document.getElementById('dl-video-lbl').textContent = t.dlVideoLbl;
+        document.getElementById('btn-reload').textContent = t.reload;
+        fullBtn.textContent = t.fullscreen;
+
+        document.getElementById('lang-id').classList.toggle('active', activeLang === 'id');
+        document.getElementById('lang-en').classList.toggle('active', activeLang === 'en');
+      }
+
+      function syncStage() {
+        applyChromeLanguage();
+        const t = COPY[activeLang];
+        const q = activeLang === 'en' ? '?lang=en' : '';
+        const playUrl = `/play/${activeConcept}/${q}`;
+        const vidUrl = `/play/downloads/tanggaltua-video-ad-${activeConcept}-${activeVid}.mp4`;
+
+        expCap.innerHTML = `${t.exportPrefix} <strong>${t.names[activeConcept]}</strong>:`;
+        const base = `/play/downloads/tanggaltua-playable-${activeConcept}-${activeSlug}`;
+        document.getElementById('dl-video').href = vidUrl;
+        document.getElementById('dl-meta').href = `${base}-meta.html`;
+        document.getElementById('dl-tiktok').href = `${base}-tiktok.zip`;
+        document.getElementById('dl-google').href = `${base}-google.zip`;
+        document.getElementById('dl-mraid').href = `${base}-mraid.html`;
+
+        if (activeMode === 'playable') {
+          videoEl.pause();
+          videoEl.classList.add('hidden');
+          frame.classList.remove('hidden');
+          frame.src = playUrl;
+          fullBtn.href = playUrl;
+          phoneBadge.textContent = t.badgePlayable;
+        } else {
+          frame.classList.add('hidden');
+          videoEl.classList.remove('hidden');
+          if (videoEl.getAttribute('src') !== vidUrl) {
+            videoEl.src = vidUrl;
+          }
+          videoEl.currentTime = 0;
+          videoEl.play().catch(() => {});
+          fullBtn.href = vidUrl;
+          phoneBadge.textContent = t.badgeVideo;
+        }
+
+        const nextParams = new URLSearchParams(window.location.search);
+        if (activeLang === 'en') nextParams.set('lang', 'en');
+        else nextParams.delete('lang');
+        const qs = nextParams.toString();
+        window.history.replaceState(null, '', window.location.pathname + (qs ? `?${qs}` : ''));
+      }
+
+      document.getElementById('mode-playable').addEventListener('click', (e) => {
+        activeMode = 'playable';
+        e.currentTarget.classList.add('active');
+        document.getElementById('mode-video').classList.remove('active');
+        syncStage();
+      });
+
+      document.getElementById('mode-video').addEventListener('click', (e) => {
+        activeMode = 'video';
+        e.currentTarget.classList.add('active');
+        document.getElementById('mode-playable').classList.remove('active');
+        syncStage();
+      });
+
+      document.querySelectorAll('.concept-card').forEach((card) => {
+        card.addEventListener('click', () => {
+          activeConcept = card.dataset.concept;
+          activeSlug = card.dataset.slug;
+          activeVid = card.dataset.vid;
+          document.querySelectorAll('.concept-card').forEach((c) => c.classList.toggle('active', c === card));
+          syncStage();
+        });
+      });
+
+      document.getElementById('lang-id').addEventListener('click', () => {
+        activeLang = 'id';
+        syncStage();
+      });
+
+      document.getElementById('lang-en').addEventListener('click', () => {
+        activeLang = 'en';
+        syncStage();
+      });
+
+      document.getElementById('btn-reload').addEventListener('click', () => {
+        syncStage();
+      });
+
+      if (activeMode === 'video') {
+        document.getElementById('mode-video').classList.add('active');
+        document.getElementById('mode-playable').classList.remove('active');
+      }
+      const initialC = params.get('c');
+      if (initialC && ['a', 'b', 'c'].includes(initialC)) {
+        const target = document.querySelector(`.concept-card[data-concept="${initialC}"]`);
+        if (target) {
+          activeConcept = target.dataset.concept;
+          activeSlug = target.dataset.slug;
+          activeVid = target.dataset.vid;
+          document.querySelectorAll('.concept-card').forEach((c) => c.classList.toggle('active', c === target));
+        }
+      }
+      syncStage();
+
+      window.addEventListener('message', (ev) => {
+        if (ev.origin && ev.origin !== window.location.origin) return;
+        if (ev.data && ev.data.type === 'tt_playable_cta') {
+          window.location.href = activeLang === 'en' ? '/en#unduh' : '/#playtest';
+        }
+      });
+    </script>
+  </body>
+</html>

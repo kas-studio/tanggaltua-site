@@ -1,0 +1,29 @@
+{
+  "name": "Tanggal Tua – Simulator Bertahan Anak Kos",
+  "short_name": "Tanggal Tua",
+  "description": "Simulator bertahan hidup anak kos Jakarta 11 hari menuju gajian — masak 36 resep Magic Com 450VA, susun kulkas 5x4, dan tolak pinjol. 100% bisa dimainkan offline.",
+  "lang": "id-ID",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F3F6FA",
+  "theme_color": "#1E1A30",
+  "categories": ["games", "simulation", "strategy"],
+  "icons": [
+    {
+      "src": "/assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/app-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "prefer_related_applications": false,
+  "related_applications": []
+}

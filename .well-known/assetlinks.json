@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "id.kasstudio.tanggaltua",
+      "sha256_cert_fingerprints": [
+        "88:78:F8:F8:36:D0:76:D8:16:73:01:C1:C7:B1:60:EE:64:7B:5C:2A:7E:72:4A:97:81:2C:84:2D:67:EE:41:34"
+      ]
+    }
+  }
+]

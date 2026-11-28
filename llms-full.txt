@@ -1,0 +1,132 @@
+# Tanggal Tua — Complete Reference (`llms-full.txt`)
+
+> Canonical full-text reference for AI search engines, RAG pipelines, gaming journalists, and community wikis. Published by **KAS Studio** (`https://kasstudio.id`), South Jakarta, Indonesia. Official site: `https://tanggaltua.id`.
+
+## 1. Identity & Store Metadata
+
+| Field | Value |
+| :--- | :--- |
+| **Official Title (iOS, Android & Web)** | Tanggal Tua |
+| **Subtitle (Bahasa Indonesia)** | Simulator Bertahan Anak Kos |
+| **Subtitle (English)** | Jakarta Kosan Survival Sim |
+| **Developer & Publisher** | KAS Studio (`https://kasstudio.id`), South Jakarta, Indonesia |
+| **Bundle / Package ID** | `id.kasstudio.tanggaltua` |
+| **Store Access / Waitlist** | `https://tanggaltua.id/#playtest` (iOS & Android) |
+| **Release Version** | `1.1.0` (Build 14 — November 2026) |
+| **Platforms** | iOS 15.0+, iPadOS 15.0+, Android 8.0+ |
+| **Languages** | Bahasa Indonesia (`id`) & English (`en-US`) — live in-game toggle |
+| **Genre** | Survival Strategy, Cooking Simulation, Polyomino Spatial Puzzle, Cozy Roguelite |
+| **Play Mode** | Single-Player, 100% Offline Playable + Optional Community Co-Creation & Friend Bailout |
+| **Install Size** | ~14 MB (Android) / ~7 MB compressed IPA (iOS) |
+| **Monetization** | Free-to-Play (`Rp 0` / `$0.00`), zero forced ads, optional opt-in rewarded videos + 6 permanent non-consumable unlocks (`Rp9.000`–`Rp49.000` / `$0.99`–`$4.99`) |
+
+---
+
+## 2. Premise & Cultural Context
+
+In Indonesia, **"Tanggal Tua"** (literally *"old dates"*) refers to the final 10–11 days of the calendar month when salaries and student allowances have run dry and payday on the 1st is still far away.
+
+On the night of the 19th, after transferring Rp2,000,000 home to family in your hometown for a younger sibling's school exams and your father's clinic checkup, you enter **Day 20 (Monday)** at **Kosan Gang Kancil, Room 04** in Jakarta with only **shoestring end-of-month cash** left in your wallet to survive **11 full days** until Payday on the 1st.
+
+Players simultaneously manage three survival meters plus electricity:
+1. **Dompet (Wallet / Rupiah):** Covers weekday commute fares, groceries, boarding-house dues, and surprise bills.
+2. **Lambung (Gut / Stomach):** Drops daily; eating plain instant noodles (`Mie Instan Polos`) 4 days in a row triggers acute gastritis (*IGD Asam Lambung*).
+3. **Kewarasan (Sanity / Morale):** Drains from heat (turning off the room fan), repetitive meals, social pressure, and predatory debt spam; dropping too low triggers a 2 AM impulse-shopping meltdown (*Checkout Khilaf 2 AM*).
+4. **Token Listrik & Batas 450VA (Power):** Every boarding-house room shares a fragile 450VA circuit breaker (*MCB*). Exceeding 450VA while cooking trips the breaker (*jeklek*), plunging the hallway into darkness.
+
+---
+
+## 3. Daily 4-Phase Gameplay Loop (~90 Seconds per Day)
+
+1. **17:00 Dusk Alley Market (*Pasar Sore Gang Kancil*):**
+   - Shop across **16 Indonesian groceries** between **Gerobak Sayur Bang Udin** (fresh produce; every 5th stamp grants 1 free bonus item) and **Kosmart 24J** (yellow-tag clearance markdowns).
+2. **19:00 Shared 5×4 Fridge Spatial Puzzle (*Kulkas Bersama 5×4*):**
+   - Rotate (`↻ PUTAR`) and fit polyomino-shaped groceries into a 20-cell communal refrigerator while navigating around roommates **Mas Budi** and **Damar's** meal-prep containers. Perishables left outside the fridge spoil overnight.
+3. **19:30 450VA Rice Cooker Workbench (*Masak di Magic Com 450VA*):**
+   - Combine 1 to 3 ingredients inside a single stainless electric rice cooker across **36 secret recipes** with **★1–★3 Dish Mastery**. Watch the live analog watt needle, flick off your Room Fan (`+65VA`) or Room Light (`+45VA`) during voltage surges, stir at peak heat, and vent steam to avoid tripping the 450VA breaker.
+4. **23:45 Midnight Kosan Drama & 3 Weekend Side Hustles:**
+   - Handle late-night knocks from **Ibu Kos** (turn off room lights to pretend you're asleep), group-chat gallon water pools, wedding envelopes, and predatory online loan (*Pinjol*) spam texts (tap 3× to swat away; borrowing Rp50,000 demands Rp65,000 back in 3 days with steep late penalties).
+   - **Weekends (Days 25–26):** Earn extra Rp5,000–Rp30,000 (+Rp3,000 Savings Bonus at the Rp26,000 2X Mastery Target) across **3 mini-games**:
+     1. **Lapak Preloved CFD (Saturday):** Run a blue tarp thrift stall at Sudirman Car-Free Day and swat away Rp5,000 lowballers.
+     2. **Narik Kurir Gang Kancil (Saturday Rotation / Bayu Signature):** 3-lane scooter delivery dodge collecting thermal food orders while dodging potholes and drying racks.
+     3. **Penonton Bayaran Studio TV (Sunday):** 2-lane live TV variety-show rhythm clapping & cheering gig.
+
+---
+
+## 4. Playable Characters (4 Residents of Kosan Gang Kancil)
+
+| Character | Role | Playstyle & Budget Reality | Unlock Condition |
+| :--- | :--- | :--- | :--- |
+| **Raka** | Office Commuter (*Karyawan KRL*) | Starts with a balanced starter budget and steady Rp5,000 weekday train fares. Best balanced starter. | Unlocked from start |
+| **Dinda** | University Student (*Mahasiswi*) | Walks to campus for Rp0 transit fare and handles late-night study stress well, but starts with leaner student cash. | Unlocked from start |
+| **Bayu** | Moto-Taxi Rider (*Driver Ojol*) | Earns daily weekday ride-hail income to cover fuel and features the Saturday 3-lane Scooter Delivery hustle. | Beat Kasta 2 (or `char_bayu` / `paket_anak_baru`) |
+| **Sari** | Mall Retail Promoter (*SPG Mal*) | Starts lean on her feet in retail; surviving until Day 25 unlocks a mid-run sales commission payout. | Beat Kasta 4 (or `char_sari` / `kos_lengkap`) |
+
+---
+
+## 5. Groceries (16 Polyomino Ingredients in `v1.1.0`)
+
+| Ingredient (`id`) | Name | Category | Base Price | Grid Size | Perishable? |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `mie` | Mie Instan Goreng | Noodle | Rp3.500 | 1×1 (1 tile) | No (10d) |
+| `kerupuk` | Kerupuk Warung | Carb | Rp2.000 | 1×1 (1 tile) | No (5d) |
+| `kecap` | Sachet Kecap & Sambal | Flavor | Rp2.500 | 1×1 (1 tile) | No (10d) |
+| `kornet` | Kornet Sapi Sachet | Protein | Rp6.000 | 1×1 (1 tile) | No (10d) |
+| `bawang_cabe` | Bawang & Rawit Setan | Flavor | Rp3.000 | 1×1 (1 tile) | No (5d) |
+| `santan` | Santan Segitiga Mini | Flavor | Rp3.500 | 1×1 (1 tile) | No (8d) |
+| `beras` | Beras Literan | Carb | Rp8.000 | 2×1 (2 tiles) | No (10d) |
+| `telur` | Telur Retak (2 btr) | Protein | Rp5.000 | 2×1 (2 tiles) | Yes (fridge!) |
+| `tempe` | Tempe Papan | Protein | Rp4.000 | 1×2 (2 tiles) | Yes (fridge!) |
+| `sosis` | Sosis Diskon Kuning | Protein | Rp6.500 | 1×2 (2 tiles) | Yes (fridge!) |
+| `sarden` | Sarden Kaleng Mini | Protein | Rp11.000 | 2×1 (2 tiles) | No (10d) |
+| `pisang` | Pisang Sisir Murah | Veggie/Fruit | Rp5.500 | 2×1 (2 tiles) | Yes (fridge!) |
+| `bayam` | Ikat Sayur Bayam | Veggie | Rp3.500 | 3×1 (3 tiles) | Yes (1d — cook fast!) |
+| `tahu` | Tahu Putih (4 bj) | Protein | Rp4.000 | L-shape (3 tiles) | Yes (fridge!) |
+| `kol` | Potongan Kol & Wortel | Veggie | Rp4.500 | L-shape (3 tiles) | Yes (fridge!) |
+| `roti_tawar` | Roti Tawar Diskon Malam | Carb | Rp6.500 | 2×2 (4 tiles) | Yes (fridge!) |
+
+---
+
+## 6. Magic Com Recipes & Dish Mastery (36 Total in *Buku Resep Keramat*)
+
+Unlocking any recipe permanently activates its passive buff across future runs (`+1` Gut & Sanity per 4 recipes discovered), and cooking a recipe repeatedly levels up **Dish Mastery (`★1` -> `★2` at 3 cooks -> `★3` at 5 cooks)** for bonus nutrition:
+
+- **Mie Instan Polos** (`Mie`) — Emergency filler; eating 4 days in a row without protein triggers gastritis.
+- **Telur Kukus Magic Com** (`Telur`) — `-10%` electricity watt load whenever cooking eggs.
+- **Nasi Kecap Legendaris** (`Beras + Kecap`) — `+2` Sanity whenever cooking rice.
+- **Mie Telur Anak Sultan** (`Mie + Telur`) — Noodles cooked with protein no longer count toward gastritis.
+- **Internet Warkop Sultan** (`Mie + Telur + Kornet`) — Midnight warkop legend; neutralizes noodle gastritis & `+4` Sanity with corned beef.
+- **Seblak Kerupuk Darurat** (`Kerupuk + Telur + Bawang & Rawit`) — `+4` Sanity whenever cooking with bird's-eye chili.
+- **Nasi Gila Gang Kancil** (`Beras + Sosis + Telur`) — `+3` Gut & `+3` Sanity on sausage+egg combos.
+- **Nasi Liwet Magic Com** (`Beras + Santan + Bawang & Rawit`) — `+3` Sanity whenever cooking with coconut milk.
+- **Mie Kuah Creamy Ramen KW** (`Mie + Santan + Sosis`) — `+3` Sanity on creamy broth creations.
+- **Lodeh Tahu Tempe Santan** (`Tempe + Tahu + Santan`) — `+4` Gut on coconut milk stews.
+- **Roti Panggang Pisang Lumer** (`Roti Tawar + Pisang`) — `-15%` electricity watt load when toasting bread.
+- **Roti Telur Lipat Sarapan** (`Roti Tawar + Telur`) — `+3` Sanity whenever eating bread.
+- **Nasi Orak-Arik Kornet** (`Beras + Kornet`) — `+3` Gut whenever cooking corned beef.
+- **Tahu Cabai Garam Kafe** (`Tahu + Bawang & Rawit`) — `+3` Gut whenever cooking tofu.
+- **Sarden Tumis Rawit Mercon** (`Sarden + Bawang & Rawit`) — `+3` extra Sanity when cooking sardines.
+- **Kolak Pisang Santan Gurih** (`Pisang + Santan`) — `+4` Sanity when eating bananas.
+- **Magelangan Magic Com** (`Beras + Mie + Telur`) — `+5` Gut & `+5` Sanity on any 3-ingredient dish.
+- **Nasi Warteg Komplit KW** (`Beras + Tempe + Telur`) — `+5` Gut on rice+protein meals.
+- **Nasi Pecel Anak Kos** (`Beras + Bayam + Tempe`) — `+3` Sanity when combining veggies & tempeh.
+- **Capcay Kuah Anak Kos** (`Kol + Tahu + Sosis`) — `+4` Sanity whenever cooking sausages.
+- **Nasi Sarden Gajian Dini** (`Beras + Sarden`) — `+5` Sanity whenever opening canned sardines.
+
+---
+
+## 7. Roguelite Trinkets (*8 Jimat Anak Kos*), Modes & Meta-Progression
+
+- **8 Jimat Anak Kos (*Barang Bawaan dari Kampung*):** From Run 2 onward, draft 1 of 3 roguelite trinkets on Day 20 — *Toples Bawang Goreng Ibu* (no repeat-meal penalty on rice + `+4` Sanity), *Kartu Member Kosmart Perak* (`15%` extra Kosmart discount), *Termos Es Batu Piknik* (2× counter shelf life), *Celengan Ayam Plastik* (`+Rp2.500` piggy-bank payout on Day 29 per frugal market day), *Kabel Roll Saklar Merah* (faster `-145VA` steam vent), *Kupon Warung & Fotokopi* (lower night drain & `2x` starting hustle combo), *Catatan Dapur Nenek* (3-ingredient meals pack free next-day lunchboxes), and *Langganan Emas Bang Udin* (starts with 2 stamps & `+4` Gut on cart veggies).
+- **8 Kasta Kos Tiers & 4 Monthly Modifiers:** Climb *Kasta 1* to *Kasta 8* across *Bulan Biasa*, *Musim Hujan*, *Bulan Kondangan*, and *Bulan Ramadan*.
+- **Tanggal Tua Harian (`#TTH`) & Struk 2.0:** Seeded 3-day sprint (Days 28–30) printing **Struk 2.0** with Kos Archetype badges (`[PAWANG LISTRIK 450VA]`, `[CHEF BINTANG KOSAN]`), active Jimat badge, signature dish emblem, and playable rival link.
+- **12 Permanent Room 04 Upgrades + 4 Toko Kelontong Estetik Cosmetics:** Spend free *Tabungan Kos* on *Adopsi Kucing Oyen*, *Stabilizer 600VA*, *Kotak Bekal Anti-Budi*, plus custom *Magic Com Bunga 90an / Batik Emas* and *Topi Koki / Kacamata Sultan Oyen* cosmetics.
+
+---
+
+## 8. Studio & Contact
+
+- **Studio:** KAS Studio (`https://kasstudio.id`) — independent game studio in South Jakarta, Indonesia, focused on original cross-platform games including **Tanggal Tua** (`tanggaltua.id`), **Pung** (`pungmahjong.com`), and **AkaSphere** (`akasphere.co`).
+- **Official Socials:** Instagram & Threads `@kasstudio.id` (studio) and `@tanggaltuagame` (game)
+- **Support & Press Email:** `halo@tanggaltua.id`
+- **Data Protection / Privacy Email (Indonesian Law No. 27/2022 UU PDP):** `privacy@kasstudio.id`

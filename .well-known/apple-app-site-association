@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "BD259VM9YH.id.kasstudio.tanggaltua",
+        "paths": ["/harian*", "/tantang*"]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": ["BD259VM9YH.id.kasstudio.tanggaltua"]
+  }
+}

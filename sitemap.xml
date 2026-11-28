@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+>
+  <url>
+    <loc>https://tanggaltua.id/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="id-ID" href="https://tanggaltua.id/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://tanggaltua.id/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tanggaltua.id/" />
+    <image:image>
+      <image:loc>https://tanggaltua.id/og-image.png</image:loc>
+      <image:title>Tanggal Tua – Game Simulator Anak Kos Indonesia</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://tanggaltua.id/assets/screen-kitchen.jpg</image:loc>
+      <image:title>Susun Kulkas Kos 5x4 dan Masak di Magic Com 450VA</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://tanggaltua.id/assets/screen-market.jpg</image:loc>
+      <image:title>Belanja Diskon Pasar Sore di Gerobak Bang Udin dan Kosmart</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://tanggaltua.id/assets/screen-hustle.jpg</image:loc>
+      <image:title>Jualan Preloved di CFD Sudirman Jakarta</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://tanggaltua.id/assets/screen-night.jpg</image:loc>
+      <image:title>Chat Malam Anak Kos dan Ngumpet dari Ibu Kos</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://tanggaltua.id/assets/screen-receipt.jpg</image:loc>
+      <image:title>Struk Bertahan Hidup Kosmart Gang Kancil</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tanggaltua.id/en</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="id-ID" href="https://tanggaltua.id/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://tanggaltua.id/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tanggaltua.id/" />
+  </url>
+  <url>
+    <loc>https://tanggaltua.id/panduan.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://tanggaltua.id/press.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://tanggaltua.id/about.html</loc>
+    <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://tanggaltua.id/contact.html</loc>
+    <lastmod>2026-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://tanggaltua.id/support.html</loc>
+    <lastmod>2026-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://tanggaltua.id/privacy.html</loc>
+    <lastmod>2026-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>
